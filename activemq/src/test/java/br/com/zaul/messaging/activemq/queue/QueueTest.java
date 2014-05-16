@@ -1,4 +1,4 @@
-package br.com.zaul.messaging.activmq.queue;
+package br.com.zaul.messaging.activemq.queue;
 
 import javax.jms.JMSException;
 
@@ -6,8 +6,8 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.zaul.messaging.activmq.queue.receiver.MessageReceiver;
-import br.com.zaul.messaging.activmq.queue.sender.MessageSender;
+import br.com.zaul.messaging.activemq.queue.receiver.MessageReceiver;
+import br.com.zaul.messaging.activemq.queue.sender.MessageSender;
 
 public class QueueTest {
    

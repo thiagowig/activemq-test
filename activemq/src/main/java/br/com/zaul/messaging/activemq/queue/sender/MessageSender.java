@@ -1,4 +1,4 @@
-package br.com.zaul.messaging.activmq.topic.publisher;
+package br.com.zaul.messaging.activemq.queue.sender;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -11,7 +11,7 @@ import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-public class MessagePublisher {
+public class MessageSender {
 	
 	private ConnectionFactory connectionFactory;
 	private Connection connection;
@@ -19,10 +19,10 @@ public class MessagePublisher {
 	private Destination destination;
 	private MessageProducer messageProducer;
 	
-	public MessagePublisher() throws JMSException {
+	public MessageSender() throws JMSException {
 		init();
 	}
-
+	
 	private void init() throws JMSException {
 		connectionFactory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_BROKER_URL);
 		connection = connectionFactory.createConnection();
@@ -30,7 +30,7 @@ public class MessagePublisher {
 		
 		session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 		
-		destination = session.createTopic("TestTopic");
+		destination = session.createQueue("TestQueue");
 		
 		messageProducer = session.createProducer(destination);
 	}
@@ -45,4 +45,5 @@ public class MessagePublisher {
 		
 		System.out.println("Sent: " + textMessage.getText());
 	}
+
 }

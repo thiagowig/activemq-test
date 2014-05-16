@@ -1,10 +1,10 @@
-package br.com.zaul.messaging.activmq.topic;
+package br.com.zaul.messaging.activemq.topic;
 
 import javax.jms.JMSException;
 
 import org.junit.Test;
 
-import br.com.zaul.messaging.activmq.topic.publisher.MessagePublisher;
+import br.com.zaul.messaging.activemq.topic.publisher.MessagePublisher;
 
 public class TopicTest {
 

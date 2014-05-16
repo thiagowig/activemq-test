@@ -1,4 +1,4 @@
-package br.com.zaul.messaging.activmq.queue.receiver;
+package br.com.zaul.messaging.activemq.queue.receiver;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
