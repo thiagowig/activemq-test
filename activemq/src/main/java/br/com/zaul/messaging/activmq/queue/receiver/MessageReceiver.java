@@ -1,4 +1,4 @@
-package br.com.zaul.messaging.activmq.receiver;
+package br.com.zaul.messaging.activmq.queue.receiver;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -20,6 +20,10 @@ public class MessageReceiver {
 	private Destination destination;
 	private MessageConsumer messageConsumer;
 	
+	public MessageReceiver() throws JMSException {
+		init();
+	}
+	
 	private void init() throws JMSException {
 		connectionFactory = new ActiveMQConnectionFactory(ActiveMQConnection.DEFAULT_BROKER_URL);
 		connection = connectionFactory.createConnection();
@@ -33,7 +37,6 @@ public class MessageReceiver {
 	}
 	
 	public String receiveMessage() throws JMSException {
-		init();
 		
 		Message message = messageConsumer.receive();
 		
